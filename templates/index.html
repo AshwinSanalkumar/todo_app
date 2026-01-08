@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FANCY To-Do List</title>
+  <style>
+    /* BODY */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f6d365, #fda085);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 50px 20px;
+      color: #333;
+    }
+
+    /* TITLE */
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    /* TODO CONTAINER */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* INDIVIDUAL TASK */
+    li {
+      background: #fff;
+      margin: 15px 0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    /* HIDE CHECKBOX */
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    /* LABEL STYLE */
+    label {
+      flex: 1;
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+
+    /* STRIKE-THROUGH EFFECT WHEN CHECKED */
+    input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: gray;
+      background: #d4f8d4;
+    }
+
+    /* ADD CHECK MARK EFFECT */
+    input[type="checkbox"]:checked + label::before {
+      content: "✔";
+      display: inline-block;
+      margin-right: 10px;
+      color: green;
+      font-weight: bold;
+    }
+
+    /* OPTIONAL: GRADIENT LABEL */
+    li label {
+      background: linear-gradient(135deg, #ffd194, #f6d365);
+      border-radius: 15px;
+      display: block;
+    }
+
+    li label:hover {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝To-Do List</h1>
+
+  <ul>
+    <li>
+      <input type="checkbox" id="task1">
+      <label for="task1">{{ tasks.0 }}</label>
+    </li>
+    <li>
+      <input type="checkbox" id="task2">
+      <label for="task2">{{ tasks.1 }}</label>
+    </li>
+    <li>
+      <input type="checkbox" id="task3">
+      <label for="task3">{{ tasks.2 }}</label>
+    </li>
+    <li>
+      <input type="checkbox" id="task4">
+      <label for="task4">{{ tasks.3 }}</label>
+    </li>
+     <li>
+      <input type="checkbox" id="task5">
+      <label for="task5">{{ tasks.4 }}</label>
+    </li>
+  </ul>
+
+</body>
+</html>
